@@ -1,0 +1,65 @@
+
+/* Center-align the entire calculator */
+#calculator {
+    max-width: 400px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Center-align the title */
+h1 {
+    font-size: 24px;
+    margin: 10px 0;
+}
+
+/* Center-align the labels for denomination and input fields */
+label {
+    display: block;
+    margin: 10px 0;
+    font-size: 16px;
+    text-align: center;
+}
+
+/* Center-align the input fields and placeholders */
+input[type="number"] {
+    width: 100px;
+    padding: 10px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    display: block;
+    margin: 0 auto;
+}
+
+/* Center-align the result display */
+#result {
+    margin: 20px 0;
+    font-size: 24px;
+    text-align: center;
+}
+
+/* Center-align the "Save as PDF" button */
+#save-pdf-button {
+    width: 100%;
+    padding: 10px;
+    margin: 20px 0;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+/* Common styles for all screen sizes */
+@media only screen and (min-width: 600px) and (max-width: 1024px) {
+    #calculator {
+        max-width: 80%;
+    }
+}

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Change Resolution Calculator</title>
+    <link rel="stylesheet" type="text/css" href="assets/bootstrap.css">
+</head>
+<body>
+    <div id="calculator">
+        <h1>Change Resolution Calculator</h1>
+        <label for="totalAmount">Enter Total Amount:</label>
+        <input type="number" id="totalAmount" min="0" placeholder="0">
+    </div>
+  
+    <div id="result">
+        <label for="fiveThousand">5000XAF:</label>
+        <span id="fiveThousand">0</span><br>
+        <label for="twoThousand">2000XAF:</label>
+        <span id="twoThousand">0</span><br>
+        <label for="oneThousand">1000XAF:</label>
+        <span id="oneThousand">0</span><br>
+        <label for="fiveHundred">500XAF:</label>
+        <span id="fiveHundred">0</span><br>
+        <label for="oneHundred">100XAF:</label>
+        <span id="oneHundred">0</span><br>
+        <label for="fifty">50XAF:</label>
+        <span id="fifty">0</span><br>
+        <label for="twentyFive">25XAF:</label>
+        <span id="twentyFive">0</span><br>
+    </div>
+
+    <button id="save-pdf-button">Save as PDF</button>
+   
+    <script>
+        function updateChange() {
+            const totalAmount = parseFloat(document.getElementById('totalAmount').value) || 0;
+
+            // Define denominations
+            const denominations = {
+                fiveThousand: 5000,
+                twoThousand: 2000,
+                oneThousand: 1000,
+                fiveHundred: 500,
+                oneHundred: 100,
+                fifty: 50,
+                twentyFive: 25
+            };
+
+            // Initialize object to hold change amounts
+            const change = {};
+
+            // Calculate change for each denomination
+            for (const [denomination, value] of Object.entries(denominations)) {
+                const count = Math.floor(totalAmount / value);
+                change[denomination] = count;
+            }
+
+            displayChange(change);
+        }
+
+        function displayChange(change) {
+            for (const [denomination, count] of Object.entries(change)) {
+                document.getElementById(denomination).textContent = count;
+            }
+        }
+
+        // Add event listener to the total amount input field
+        document.getElementById('totalAmount').addEventListener('input', updateChange);
+
+        // Initial calculation on page load
+        updateChange();
+    </script>
+</body>
+</html>
